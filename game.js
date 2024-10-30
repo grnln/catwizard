@@ -1,7 +1,7 @@
 /*
  * Cat Wizard
- * by Guillermo R.N.
- * 
+ *
+ * Guillermo R.N.
  * 2024
  */
 
