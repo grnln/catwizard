@@ -131,7 +131,7 @@ const keyDownHandler = (e) => {
     } else if (e.key === "Down" || e.key === "ArrowDown") {
         cat.downPress = true;
     }
-}
+};
 
 const keyUpHandler = (e) => {
     if (e.key === "Left" || e.key === "ArrowLeft") {
@@ -143,7 +143,7 @@ const keyUpHandler = (e) => {
     } else if (e.key === "Down" || e.key === "ArrowDown") {
         cat.downPress = false;
     }
-}
+};
 
 const playClickHandler = (e) => {
     if (state === "dead") {
@@ -161,11 +161,11 @@ const playClickHandler = (e) => {
         pumpkins.forEach((pumpkin) => {pumpkin.x -= canvas.width});
     }
     state = "play";
-}
+};
 
 const rectCollision = (a, b) => {
     return ((a.x + a.w) >= b.x && a.x <= (b.x + b.w) && (a.y + a.h) >= b.y && a.y <= (b.y + b.h));
-}
+};
 
 const updateCat = () => {
     if (cat.leftPress) {
@@ -212,21 +212,21 @@ const updateCat = () => {
     }
     document.getElementById("healthText").innerHTML = cat.health;
     document.getElementById("scoreText").innerHTML = cat.score;
-}
+};
 
 const clearScreen = () => {
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
-}
+};
 
 const renderCat = () => {
     if (cat.hitTime <= 0 || (cat.hitTime > 0 && cat.hitTime % 8 === 0)) {
         canvasContext.drawImage(resources["catSprite"], cat.x, cat.y);
     }
-}
+};
 
 const renderMoon = () => {
     canvasContext.drawImage(resources["moonSprite"], (canvas.width / 2) - 32, (canvas.height / 2) - 32);
-}
+};
 
 const updateStars = () => {
     stars.forEach((star) => {
@@ -236,7 +236,7 @@ const updateStars = () => {
             star.x = 0;
         }
     });
-}
+};
 
 const renderStars = () => {
     stars.forEach((star) => {
@@ -246,7 +246,7 @@ const renderStars = () => {
         canvasContext.fill();
         canvasContext.closePath();
     });
-}
+};
 
 const updateGhosts = () => {
     for (let i = 0; i < maxGhosts; i++) {
@@ -270,7 +270,7 @@ const updateGhosts = () => {
     if (ghostTime > 2.0 * Math.PI) {
         ghostTime = 0.0;
     }
-}
+};
 
 const renderGhosts = () => {
     for (let i = 0; i < maxGhosts; i++) {
@@ -286,7 +286,7 @@ const renderGhosts = () => {
             30
         );
     }
-}
+};
 
 const updatePumpkins = () => {
     pumpkins.forEach((pumpkin) => {
@@ -310,13 +310,13 @@ const updatePumpkins = () => {
             }
         }
     });
-}
+};
 
 const renderPumpkins = () => {
     pumpkins.forEach((pumpkin) => {
         canvasContext.drawImage(resources["pumpkinSprite"], pumpkin.x, pumpkin.y);
     });
-}
+};
 
 const renderGameOver = () => {
     canvasContext.beginPath();
@@ -330,7 +330,7 @@ const renderGameOver = () => {
     canvasContext.fillStyle = "#ffffff";
     canvasContext.textAlign = "center";
     canvasContext.fillText("Game Over", 160, 80);
-}
+};
 
 const update = () => {
     /* Update */
@@ -367,7 +367,7 @@ const updateScore = () => {
             }
         }
     }
-}
+};
 
 /* Start program */
 init();
